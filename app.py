@@ -34,14 +34,14 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     technology = parameters.get("searchTech")
     projectLoc = parameters.get("searchLoc")
-    preffLoc = parameters.get("prefferedLoc")
+    #preffLoc = parameters.get("prefferedLoc")
     experience = parameters.get("number")
     designation = parameters.get("searchdesignation")
     
 
     resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
     
-    speech = "The number of " + technology + " resources available are " + str(resource[technology]) +" at "+ str(projectLoc)+" having experience of " + + str(experience)+
+    speech = "The number of " + technology + " resources available are " + str(resource[technology]) +" at "+ projectLoc+" having experience of " + experience 
 
     print("Response:")
     print(speech)
@@ -51,7 +51,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
-        "source": "apiai-larry"
+        "source": "larry.bot"
     }
 
 
