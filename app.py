@@ -33,23 +33,15 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     projectLoc = parameters.get("searchLoc")
-            if projectLoc is None:
-        return {}
     experience = parameters.get("number")
-                if experience is None:
-        return {}
     designation = parameters.get("searchdesignation")
-                if designation is None:
-        return {}
     technology = parameters.get("searchTech")  
-                if technology is None:
-        return {}
 
-    #resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
-    #exp = {1:'One', 2: 'Two', 3:'Three'}
+    resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
+    exp = {1:'One', 2: 'Two', 3:'Three'}
     
-    speech =  projectLoc + technology + experience + designation
-    #speech = "The number of " + technology + " resources available are " + str(resource[technology])
+    
+    speech = "The number of " + technology + " resources available are " + str(resource[technology])
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
