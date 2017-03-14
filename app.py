@@ -38,17 +38,17 @@ def makeWebhookResult(req):
     designation = parameters.get("searchdesignation")
     technology = parameters.get("searchTech")  
 
-    resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
+   # resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
            
-    #speech = "The number of " + technology + " resources available are " + str(resource[technology]) + 
+    speech = "The number of " + technology + " resources available are " + experience +  designation + projectLoc + prefLoc
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
     print(speech)
 
     return {
-        "speech": "The number of " + technology + " resources available are " + str(resource[technology]) + experience +  designation + prefLoc,
-        "displayText": "The number of " + technology + " resources available are " + str(resource[technology]) + experience +  designation + prefLoc,
+        "speech": speech,
+        "displayText": speech,
         #"data": {},
         # "contextOut": [],
         "source": "larry.bot"
@@ -58,6 +58,6 @@ def makeWebhookResult(req):
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
-    print "Starting app on port %d" % port
+    #print "Starting app on port %d" % port
 
     app.run(debug=True, port=port, host='0.0.0.0')
