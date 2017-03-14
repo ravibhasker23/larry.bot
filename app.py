@@ -27,21 +27,38 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+
+def makeYqlQuery(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    
+    projectLoc = parameters.get("searchLoc")
+    if projectLoc is None:
+        return None
+    prefLoc = parameters.get("prefferedLoc")
+    if prefLoc is None:
+        return None
+    experience = parameters.get("number")
+    if experience is None:
+        return None
+    designation = parameters.get("searchdesignation")
+    if designation is None:
+        return None
+    technology = parameters.get("searchTech")  
+    if technology is None:
+        return None
+
+    return "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "larry.bot":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
-    projectLoc = parameters.get("searchLoc")
-    prefLoc = parameters.get("prefferedLoc")
-    experience = parameters.get("number")
-    designation = parameters.get("searchdesignation")
-    technology = parameters.get("searchTech")  
-
-    resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
+    yql_query = makeYqlQuery(req)
+   #resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
            
     #speech = "The number of " + technology + " resources available are " + str(resource[technology])
-    speech  = "Hello! "+ technology +" You did a Great job!"
+    speech  = yql_query
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
