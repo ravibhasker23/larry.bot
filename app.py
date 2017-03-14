@@ -40,7 +40,7 @@ def makeWebhookResult(req):
 
    # resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
            
-    speech = "The number of " + technology + " resources available are " + experience +  designation + projectLoc + prefLoc
+    speech = "The number of " + technology + " resources available are " + experience +
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
