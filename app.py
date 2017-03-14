@@ -38,9 +38,9 @@ def makeWebhookResult(req):
     designation = parameters.get("searchdesignation")
     technology = parameters.get("searchTech")  
 
-   # resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
+    resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
            
-    speech = "The number of " + technology + " resources available are " + experience +
+    speech = projectLoc + prefLoc + experience + designation + "The number of " + technology + " resources available are " + str(resource[technology])
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
