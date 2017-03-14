@@ -40,8 +40,8 @@ def makeWebhookResult(req):
     resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
     exp = {1:'One', 2: 'Two', 3:'Three'}
     
-    speech1 = "The number of " + technology + " resources available are " + str(resource[technology]) 
-    speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
+    speech = "The number of " + technology + " resources available are " + str(resource[technology]) 
+    #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
     print(speech)
