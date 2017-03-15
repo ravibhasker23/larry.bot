@@ -27,10 +27,11 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-
-def makeYqlQuery(req):
+def makeWebhookResult(req):
+    if req.get("result").get("action") != "larry.bot":
+        return {}
     result = req.get("result")
-    parameters = result.get("parameters")
+     parameters = result.get("parameters")
     
     projectLoc = parameters.get("searchLoc")
     if projectLoc is None:
@@ -47,18 +48,10 @@ def makeYqlQuery(req):
     technology = parameters.get("searchTech")  
     if technology is None:
         return None
-
-    return "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-
-def makeWebhookResult(req):
-    if req.get("result").get("action") != "larry.bot":
-        return {}
-    result = req.get("result")
-    yql_query = makeYqlQuery(req)
-   #resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
+     #resource = {'JAVA':10, '.Net':2, 'HTML':3, 'Blue Prism':4, 'Open Source':5}
            
     #speech = "The number of " + technology + " resources available are " + str(resource[technology])
-    speech  = yql_query
+    speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
     print("Response:")
