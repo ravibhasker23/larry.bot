@@ -48,9 +48,9 @@ def makeWebhookResult(req):
     technology = parameters.get("searchTech")  
     if technology is None:
         return None
-     exp = {1:'One', 2:'Two'}
+     resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech = techonology + "The number of " + experience + " resources available are " + str(exp[experience])
+    speech = techonology + "The number of " + technology + " resources available are " + str(resource[technology])
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
