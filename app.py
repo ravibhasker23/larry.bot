@@ -34,9 +34,9 @@ def makeWebhookResult(req):
     #context = req.get("contexts")
     parameters = result.get("parameters")
     
-    projectLoc = parameters.get("location")
+    #projectLoc = parameters.get("location")
 
-    designation = parameters.get("role")
+    #designation = parameters.get("role")
 
     technology = parameters.get("technology")  
 
