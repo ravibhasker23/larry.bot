@@ -32,13 +32,14 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
+    contexts = result.get("contexts")
+    parameters = contexts.get("parameters")
     
     #projectLoc = parameters.get("location")
 
     #designation = parameters.get("role")
 
-    technology = parameters.get("technology")  
+    technology = parameters.get("tech")  
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
