@@ -31,6 +31,7 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "contextagent.test":
         return {}
     result = req.get("result")
+    context = req.get("contexts")
     parameters = result.get("parameters")
     
     projectLoc = parameters.get("location")
@@ -43,7 +44,7 @@ def makeWebhookResult(req):
            
     #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    speech = technology + " reosources " + projectLoc + " " + designation 
+    speech =  context.get("parameters").get("tech")
     
     print("Response:")
     print(speech)
