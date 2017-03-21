@@ -39,7 +39,7 @@ def makeWebhookResult(req):
 
     #designation = parameters.get("role")
 
-    technology = parameters.get("tech")  
+    technology = parameters.get("tech.original")  
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
