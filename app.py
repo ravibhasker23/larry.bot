@@ -28,29 +28,23 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "larry.bot":
+    if req.get("result").get("action") != "chatbot.test":
         return {}
     result = req.get("result")
      parameters = result.get("parameters")
     
-    projectLoc = parameters.get("searchLoc")
+    projectLoc = parameters.get("location")
     if projectLoc is None:
         return None
-    prefLoc = parameters.get("prefferedLoc")
-    if prefLoc is None:
-        return None
-    experience = parameters.get("number")
-    if experience is None:
-        return None
-    designation = parameters.get("searchdesignation")
+    designation = parameters.get("role")
     if designation is None:
         return None
-    technology = parameters.get("searchTech")  
+    technology = parameters.get("technology")  
     if technology is None:
         return None
-     resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
+    # resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech = techonology + "The number of " + technology + " resources available are " + str(resource[technology])
+    speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     #speech = speech1 + " at " + projectLoc + " having experience of " + str(exp[experience]) + " years "
     
