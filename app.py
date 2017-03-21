@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 
 import urllib
@@ -41,10 +42,9 @@ def makeWebhookResult(req):
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech =  "Technology " + parameters.get("location") + " Project Location " + parameters.get("role") + "Role " + parameters.get("technology")
+    #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    #speech = technology + " reosources " + projectLoc + " " + designation 
-    
+    speech = technology + " reosources " + projectLoc + " " + designation 
     
     print("Response:")
     print(speech)
