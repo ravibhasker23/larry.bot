@@ -33,9 +33,9 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     
-    #projectLoc = parameters.get("location")
+    projectLoc = parameters.get("location")
 
-   #designation = parameters.get("role")
+    designation = parameters.get("role")
 
     technology = parameters.get("technology")  
 
@@ -43,7 +43,7 @@ def makeWebhookResult(req):
            
     #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    speech = technology + " having experience of " + str(resource[technology])
+    speech = technology + " having experience of " + str(resource[technology]) + projectLoc + designation
     
     print("Response:")
     print(speech)
