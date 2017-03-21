@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 import urllib
@@ -29,23 +28,22 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "chatbot.test":
+    if req.get("result").get("action") != "contextagent.test":
         return {}
     result = req.get("result")
-    contexts = result.get("contexts")
-    parameters = contexts.get("parameters")
+    parameters = result.get("parameters")
     
-    #projectLoc = parameters.get("location")
+    projectLoc = parameters.get("location")
 
-    #designation = parameters.get("role")
+    designation = parameters.get("role")
 
-    technology = parameters.get("tech.original")  
+    technology = parameters.get("technology")  
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
     #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    speech = "hello world " + technology 
+    speech = technology + " reosources " + projectLoc + " " + designation 
     
     print("Response:")
     print(speech)
