@@ -43,7 +43,7 @@ def makeWebhookResult(req):
            
     #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    speech = "Technology " + technology
+    speech = "Technology you want" + technology
     
     print("Response:")
     print(speech)
