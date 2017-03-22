@@ -42,7 +42,7 @@ def makeWebhookResult(req):
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech =  "Technology " + technology
+    speech =  " Technology" + technology
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     #speech =  " technology" + technology
     
