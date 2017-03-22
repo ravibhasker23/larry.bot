@@ -31,7 +31,6 @@ def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
         return {}
     result = req.get("result")
-    #context = req.get("contexts")
     parameters = result.get("parameters")
     
     #projectLoc = parameters.get("location")
@@ -42,9 +41,9 @@ def makeWebhookResult(req):
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech =  " Technology" + technology
+    #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
-    #speech =  " technology" + technology
+    speech = "Technology " + technology
     
     print("Response:")
     print(speech)
