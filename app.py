@@ -28,7 +28,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "contextagent.test":
+    if req.get("result").get("action") != "chatbot.test":
         return {}
     result = req.get("result")
     #context = req.get("contexts")
