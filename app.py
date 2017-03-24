@@ -30,12 +30,7 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
         return {}
-    if req.get("result").get("parameters").get("technology") == null:
-        return {}
-    if req.get("result").get("parameters").get("location") == null:
-        return {}
-    if req.get("result").get("parameters").get("role") == null:
-        return {}
+    
     result = req.get("result")
     
     parameters = result.get("parameters")
