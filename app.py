@@ -40,33 +40,21 @@ def makeWebhookResult(req):
     designation = parameters.get("role")
     if designation is None:
         return {
-            "speech": "designation?",
-            "displayText": speech,
-            #"data": {},
-            # "contextOut": [],
-            "source": "larry.bot"  
+            speech = " role"  
         }
     #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
     
     projectLoc = parameters.get("location")
     if projectLoc is None:
         return {
-            "speech": "location?",
-            "displayText": speech,
-            #"data": {},
-            # "contextOut": [],
-            "source": "larry.bot" 
+            speech = " location"
         }
     #speech = "Technology you want" + technology + " Project Location " + projectLoc
 
     technology = parameters.get("technology") 
     if technology is None:
         return {
-            "speech": "technology?",
-            "displayText": speech,
-            #"data": {},
-            # "contextOut": [],
-            "source": "larry.bot"    
+            speech = " technology" 
         }
     #speech = "Technology you want" + technology
 
