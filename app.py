@@ -38,12 +38,18 @@ def makeWebhookResult(req):
     
 
     designation = parameters.get("role")
+    if designation is None:
+        return {}
     #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
     
     projectLoc = parameters.get("location")
+    if projectLoc is None:
+        return {}
     #speech = "Technology you want" + technology + " Project Location " + projectLoc
 
-    technology = parameters.get("technology")  
+    technology = parameters.get("technology") 
+    if technology is None:
+        return {}
     #speech = "Technology you want" + technology
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
