@@ -36,17 +36,20 @@ def makeWebhookResult(req):
     
 
     designation = parameters.get("role")
+    speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
     
     projectLoc = parameters.get("location")
+    speech = "Technology you want" + technology + " Project Location " + projectLoc
 
     technology = parameters.get("technology")  
+    speech = "Technology you want" + technology
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
     #speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     
-    speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
+    #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
     
     print("Response:")
     print(speech)
