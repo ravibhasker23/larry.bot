@@ -33,8 +33,7 @@ def processquery(designation):
                      user="POC_USER",         # your username
                      passwd="pocuser",  # your password
                      db="Informatica")
-    cur = db.cursor()
-    return "SELECT EMPLOYEE_NAME FROM EMPLOYEE where DESIGNATION = 'designation'"
+    return "abcd"
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
