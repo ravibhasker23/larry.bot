@@ -3,6 +3,7 @@
 import urllib
 import json
 import os
+import MySQLdb
 
 from flask import Flask
 from flask import request
@@ -27,6 +28,14 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+def processquery(designation):
+    db = MySQLdb.connect(host="122.98.107.190",    # your host, usually localhost
+                     user="POC_USER",         # your username
+                     passwd="pocuser",  # your password
+                     db="Informatica")
+    cur = db.cursor()
+    return "SELECT EMPLOYEE_NAME FROM EMPLOYEE where DESIGNATION = '" +designation+ "'"
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
         return {}
@@ -50,11 +59,12 @@ def makeWebhookResult(req):
     technology = parameters.get("technology") 
     if technology is None:
         return {}
+    
     #speech = "Technology you want" + technology
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech =  "Technology " + technology + " Project Location " + projectLoc + "Role " + designation
+    speech =  processquery(designation)
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     
     #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
