@@ -33,7 +33,16 @@ def processquery(designation):
                      user="POC_USER",         # your username
                      passwd="pocuser",  # your password
                      db="Informatica")
-    return "abcd"
+    cur = db.cursor()
+
+    # Use all the SQL you like
+    cur.execute("SELECT EMPLOYEE_NAME FROM EMPLOYEE where designation = ?")
+
+    # print all the first cell of all the rows
+    for row in cur.fetchall():
+        print row[0]
+
+    db.close()
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
@@ -63,7 +72,8 @@ def makeWebhookResult(req):
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech =  processquery(designation)
+    speech1 =  processquery(designation)
+    speech = speech1 + " hence connected"
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     
     #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
