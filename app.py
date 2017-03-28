@@ -28,23 +28,6 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def processquery(designation):
-    db = MySQLdb.connect(host="122.98.107.190",    # your host, usually localhost
-                     user="POC_USER",         # your username
-                     passwd="pocuser",  # your password
-                     db="Informatica")
-    cur = db.cursor()
-
-    # Use all the SQL you like
-    cur.execute("SELECT EMPLOYEE_NAME FROM EMPLOYEE where designation = ?")
-
-    # print all the first cell of all the rows
-    for row in cur.fetchall():
-        print row[0]
-    
-    db.close()
-    return cur.rowcount
-
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
         return {}
