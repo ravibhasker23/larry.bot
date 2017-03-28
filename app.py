@@ -73,11 +73,11 @@ def makeWebhookResult(req):
 
     #resource = {'JAVA' : 10, '.Net' : 2, 'Blue Prism' : 5}
            
-    speech1 =  processquery(designation)
-    speech = speech1 + " hence connected"
+    #@speech1 =  processquery(designation)
+    #speech = speech1 + " hence connected"
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     
-    #speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
+    speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
     
     print("Response:")
     print(speech)
