@@ -3,7 +3,7 @@
 import urllib
 import json
 import os
-import MySQL.connector
+import mysql
 
 from flask import Flask
 from flask import request
