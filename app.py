@@ -41,8 +41,9 @@ def processquery(designation):
     # print all the first cell of all the rows
     for row in cur.fetchall():
         print row[0]
-
+    
     db.close()
+    return cur.rowcount
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "chatbot.test":
