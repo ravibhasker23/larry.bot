@@ -3,7 +3,7 @@
 import urllib
 import json
 import os
-import mysql
+#import mysql
 
 from flask import Flask
 from flask import request
