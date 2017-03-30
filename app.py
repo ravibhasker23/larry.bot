@@ -3,7 +3,18 @@
 import urllib
 import json
 import os
-import MySQLdb as db
+import MySQLdb
+
+db = MySQLdb.connect(host = "122.98.107.190",user = "POC_USER",passwd = "pocuser",db = "Informatica")
+
+cur = db.cursor()
+cur.execute("SELECT * FROM Employee")
+
+for row in cur.fetchall():
+        print row
+
+
+db.close()
 
 from flask import Flask
 from flask import request
