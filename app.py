@@ -3,7 +3,7 @@
 import urllib
 import json
 import os
-import pypyodbc 
+#import pypyodbc 
 
 from flask import Flask
 from flask import request
