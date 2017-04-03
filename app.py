@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-
+import MySQLdb
 import urllib
 import json
 import os
-import MySQLdb
+
 
 from flask import Flask
 from flask import request
