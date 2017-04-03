@@ -9,16 +9,16 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-#db = MySQLdb.connect(host = "122.98.107.190",user = "POC_USER",passwd = "pocuser",db = "Informatica")
+db = MySQLdb.connect(host = "122.98.107.190",user = "POC_USER",passwd = "pocuser",db = "Informatica")
 
-#cur = db.cursor()
-#cur.execute("SELECT * FROM Employee")
+cur = db.cursor()
+cur.execute("SELECT * FROM Employee")
 
-#for row in cur.fetchall():
-        #print row
+for row in cur.fetchall():
+        print row
 
 
-#db.close()
+db.close()
 
 
 
@@ -67,6 +67,7 @@ def makeWebhookResult(req):
     #speech  = "You have searched profiles for " + technology + " for location " + prefLoc + " with experience " + experience + " and designation " + designation
     
         speech = "Technology you want" + technology + " Project Location " + projectLoc + "Role " + designation
+        speech = cur;
         print("Response:")
         print(speech)
 
