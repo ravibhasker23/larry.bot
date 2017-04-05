@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import MySQL
+#import MySQL
 import urllib
 import json
 import os
