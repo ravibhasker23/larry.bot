@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import MySQL
+import MySQLdb
 import urllib
 import json
 import os
@@ -9,7 +9,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-db = MySQL.connect(host = "122.98.107.190",user = "POC_USER",passwd = "pocuser",db = "Informatica")
+db = MySQLdb.connect(host = "122.98.107.190",user = "POC_USER",passwd = "pocuser",db = "Informatica")
 
 cur = db.cursor()
 cur.execute("SELECT * FROM Employee")
